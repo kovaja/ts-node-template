@@ -6,7 +6,7 @@
 ### TODOS:
 - readme
 - "publish": "git push heroku +master && echo \"Add: heroku logs --tail -a ..app-name..\"",
-- publish with version increas
+- publish with version increase
 
 #### CLIENT
 - async actions
