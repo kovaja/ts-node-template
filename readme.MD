@@ -6,6 +6,7 @@
 ### TODOS:
 - readme
 - "publish": "git push heroku +master && echo \"Add: heroku logs --tail -a ..app-name..\"",
+- publish with version increase
 - extract base /api path to constants
 
 #### CLIENT
