@@ -4,11 +4,7 @@
 - both in typescript
 
 ### TODOS:
-- readme
-- "publish": "git push heroku +master && echo \"Add: heroku logs --tail -a ..app-name..\"",
+- readme how to use
 - publish with version increase
 - extract base /api path to constants
-- write test that will verify that it works how it shoud
-
-#### CLIENT
-- async actions
+- write integration smoke test
