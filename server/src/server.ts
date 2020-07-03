@@ -1,15 +1,28 @@
 import * as dotenv from 'dotenv';
-import app from './app';
 import { Logger } from './utilities/logger';
-import { isProd } from './utilities/common.utility';
+import { isProd } from './utilities/commons';
+import { createApp } from './app';
+import { Application } from 'express';
+import { getPort, getHost, getProtocol } from './utilities/network';
 dotenv.config();
 
 const PORT = process.env.PORT;
 
-app.listen(PORT, (): void => {
-  Logger.log('Server listening on port', PORT);
+function onAppListening(): void {
+  const network = {
+    protocol: getProtocol(),
+    host: getHost(),
+    port: getPort()
+  };
 
-  if (!isProd()) {
-    Logger.log('Your app is running in dev mode');
-  }
-});
+  Logger.log('Server si running');
+  Logger.log(network);
+}
+
+function onAppCreated(app: Application): void {
+  app.listen(PORT, onAppListening);
+}
+
+createApp()
+  .then(onAppCreated)
+  .catch((e) => Logger.error(e));
