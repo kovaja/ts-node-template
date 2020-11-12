@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
 import { TestController } from '../controllers/test.controller';
-import { ApiUtility } from '../utilities/api.utility';
+import { handleApiResponse } from '../utilities/api.utility';
 
 export class TestRoute {
   private controller: TestController;
@@ -17,7 +17,7 @@ export class TestRoute {
 
   private handleTest(req: Request, res: Response): void {
     this.controller.testControllerMethod()
-      .then(ApiUtility.handleResponse(res))
-      .catch(ApiUtility.handleError(res));
+      .then(handleApiResponse(res))
+      .catch(handleApiResponse(res));
   }
 }
