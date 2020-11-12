@@ -18,10 +18,10 @@ npm run dev
 ```
 
 ## Deployment
-- this template project will be deployed at heroku
+- this template project is deployed in heroku
+- here: [https://ts-node-template.herokuapp.com/](https://ts-node-template.herokuapp.com/) you can find what you should see, when you start up the demo app
 
 ### TODOS:
 - readme how to use
-- publish with version increase
-- extract base /api path to constants
-- write integration smoke test
+- do not build in heroku, utilize github ?
+- write e2e smoke test
