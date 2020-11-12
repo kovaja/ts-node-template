@@ -5,18 +5,15 @@ enum LogLevel {
   error = 'error'
 }
 
-export class Logger {
+function out(level: LogLevel, ...args: any): void {
+  /* tslint:disable-next-line:no-console */
+  console[level](`[${Constants.APP_NAME}] - ${new Date().toISOString()}: `, ...args);
+}
 
-  private static out(level: LogLevel, ...args: any): void {
-    /* tslint:disable-next-line:no-console */
-    console[level](`[${Constants.APP_NAME}] - ${new Date().toISOString()}: `, ...args);
-  }
+export function log(...args: any[]): void {
+  out(LogLevel.log, ...args);
+}
 
-  public static log(...args: any[]): void {
-    this.out(LogLevel.log, ...args);
-  }
-
-  public static error(...args: any[]): void {
-    this.out(LogLevel.error, ...args);
-  }
+export function logError(...args: any[]): void {
+  out(LogLevel.error, ...args);
 }

@@ -1,9 +1,9 @@
 import * as dotenv from 'dotenv';
-import { Logger } from './utilities/logger';
-import { isProd } from './utilities/commons';
-import { createApp } from './app';
 import { Application } from 'express';
-import { getPort, getHost, getProtocol } from './utilities/network';
+import { createApp } from './app';
+import { log, logError } from './utilities/logger';
+import { getHost, getPort, getProtocol } from './utilities/network';
+
 dotenv.config();
 
 const PORT = process.env.PORT;
@@ -15,10 +15,10 @@ function onAppListening(): void {
     port: getPort()
   };
 
-  Logger.log('Server si running');
-  Logger.log(network);
+  log('Server si running');
+  log(network);
 }
 
 createApp()
   .then((app: Application) => app.listen(PORT, onAppListening))
-  .catch((e) => Logger.error(e));
+  .catch((e) => logError(e));

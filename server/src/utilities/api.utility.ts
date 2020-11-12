@@ -1,12 +1,12 @@
 import { Response } from 'express';
 import { IErrorResponse } from '../../../shared/api.schemas';
 import { AppError } from '../models/AppError';
-import { Logger } from './logger';
+import { logError } from './logger';
 
 export class ApiUtility {
   public static handleError(res: Response): (error: Error | AppError) => void {
     return (error: Error | AppError): void => {
-      Logger.error(error);
+      logError(error);
 
       const isAppError =  (error as AppError).isAppError;
       const status = isAppError ? 400 : 500;
