@@ -19,10 +19,6 @@ function onAppListening(): void {
   Logger.log(network);
 }
 
-function onAppCreated(app: Application): void {
-  app.listen(PORT, onAppListening);
-}
-
 createApp()
-  .then(onAppCreated)
+  .then((app: Application) => app.listen(PORT, onAppListening))
   .catch((e) => Logger.error(e));
