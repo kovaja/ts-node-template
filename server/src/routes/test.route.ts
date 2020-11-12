@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
 import { TestController } from '../controllers/test.controller';
-import { handleApiResponse } from '../utilities/api.utility';
+import { handleApiResponse } from '../utilities/api';
 
 export class TestRoute {
   private controller: TestController;
