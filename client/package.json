@@ -22,21 +22,21 @@
   ],
   "proxy": "http://localhost:8000",
   "dependencies": {
-    "axios": "0.19.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-redux": "7.2.0",
+    "axios": "0.21.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-redux": "7.2.2",
     "redux": "4.0.5"
   },
   "devDependencies": {
     "@types/axios": "0.14.0",
-    "@types/react": "16.9.41",
-    "@types/react-dom": "16.9.8",
-    "@types/react-redux": "7.1.9",
-    "react-scripts": "3.4.1",
-    "sass-loader": "8.0.2",
-    "tslint": "6.1.2",
+    "@types/react": "16.9.56",
+    "@types/react-dom": "16.9.9",
+    "@types/react-redux": "7.1.11",
+    "react-scripts": "4.0.0",
+    "sass-loader": "10.0.1",
+    "tslint": "6.1.3",
     "tslint-react": "5.0.0",
-    "typescript": "3.9.6"
+    "typescript": "4.0.5"
   }
 }
