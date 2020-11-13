@@ -4,14 +4,14 @@
   "description": "Empty project with template for node.js application with REST api and react frontend",
   "scripts": {
     "validate": "node ./tools/validation.js",
-    "postinstall": "npm run client:install && npm run server:install",
+    "install": "npm run client:install && npm run server:install",
     "client:install": "cd client && npm install",
     "server:install": "cd server && npm install",
     "server": "cd server && npm run prod",
-    "prestart": "npm run client:build && npm run server:build",
+    "build": "npm run client:build && npm run server:build",
     "client:build": "cd client && npm run build",
     "server:build": "cd server && npm run build",
-    "start": "npm run server",
+    "start": "npm run build && npm run server",
     "server:dev": "cd server && npm run dev",
     "client:dev": "cd client && npm run dev"
   },
