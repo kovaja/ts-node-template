@@ -13,4 +13,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "ts-node-template"
           heroku_email: "${{secrets.HEROKU_EMAIL}}"
+          healthcheck: "https://ts-node-template.herokuapp.com/api/test/init"
+          delay: 100 #seconds
           appdir: "."
+
