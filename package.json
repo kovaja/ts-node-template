@@ -4,9 +4,6 @@
   "description": "Empty project with template for node.js application with REST api and react frontend",
   "scripts": {
     "validate": "node ./tools/validation.js",
-    "postinstall": "npm run client:install && npm run server:install",
-    "client:install": "cd client && npm install --only=dev && npm install && npm run build",
-    "server:install": "cd server && npm install --only=dev && npm install && npm run build",
     "server": "cd server && npm run prod",
     "start": "npm run server",
     "publish": "git push origin master && git push heroku +master && heroku logs --tail -a ts-node-template",

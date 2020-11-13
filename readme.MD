@@ -19,7 +19,7 @@ npm run dev
 
 ## Deployment
 - this template project is deployed in heroku
-- here: [https://ts-node-template.herokuapp.com/](https://ts-node-template.herokuapp.com/) you can find what you should see, when you start up the demo app
+- here: [https://ts-node-template.herokuapp.com/](https://ts-node-template.herokuapp.com/) you can find, what you should see, when you start up the demo app
 
 ### TODOS:
 - readme how to use
