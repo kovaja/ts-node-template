@@ -2,26 +2,27 @@
 - node.js server with rest API, using express
 - react frontend, with example of redux
 - both in typescript
+## Quick start
+- run command
+```
+  npm install && npm start
+```
+- open http://localhost:8000/ in your browser
 
 ## Dev start up
 - Start server
 ```
-cd server
-npm install
-npm run dev
+npm run server:dev
 ```
 - Start client
 ```
-cd client
-npm install
-npm run dev
+npm run client:dev
 ```
 
-## Deployment
-- this template project is deployed in heroku
-- here: [https://ts-node-template.herokuapp.com/](https://ts-node-template.herokuapp.com/) you can find, what you should see, when you start up the demo app
+## Demo
+- this template project is deployed here: https://ts-node-template.herokuapp.com/ you can find, what you should see, when you start up the app
 
 ### TODOS:
-- readme how to use
 - do not build in heroku, utilize github ?
+- write unit tests
 - write e2e smoke test

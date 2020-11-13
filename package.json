@@ -1,15 +1,17 @@
 {
   "name": "kovaja-ts-node-template",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Empty project with template for node.js application with REST api and react frontend",
   "scripts": {
     "validate": "node ./tools/validation.js",
+    "install": "npm run client:install && npm run server:install",
+    "client:install": "cd client && npm install",
+    "server:install": "cd server && npm install",
     "server": "cd server && npm run prod",
-    "start": "npm run server",
-    "publish": "git push origin master && git push heroku +master && heroku logs --tail -a ts-node-template",
-    "publish:patch": "npm run validate && npm version patch && npm run publish",
-    "publish:minor": "npm run validate && npm version minor && npm run publish",
-    "publish:major": "npm run validate && npm version major && npm run publish",
+    "build": "npm run client:build && npm run server:build",
+    "client:build": "cd client && npm run build",
+    "server:build": "cd server && npm run build",
+    "start": "npm run build && npm run server",
     "server:dev": "cd server && npm run dev",
     "client:dev": "cd client && npm run dev"
   },

@@ -1,5 +1,8 @@
 name: client
-on: [push]
+on:
+  push:
+    branches:
+      - '*'
 jobs:
   verify:
     runs-on: ubuntu-latest

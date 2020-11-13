@@ -1,0 +1,12 @@
+name: publish
+on:
+  create:
+    tags:
+      - '*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+      - run: herkoku -v
