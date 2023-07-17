@@ -1,6 +1,6 @@
 # Kovaja template project
 - node.js server with rest API, using express
-- react frontend, with example of redux
+- react frontend
 - both in typescript
 ## Quick start
 - run command
@@ -22,4 +22,3 @@ npm run client:dev
 ### TODOS:
 - write unit tests
 - write e2e smoke test
-- remove redux

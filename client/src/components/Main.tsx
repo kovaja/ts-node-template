@@ -1,68 +1,43 @@
-import React, { Component } from 'react';
-import { connect, MapStateToProps } from 'react-redux';
-import { ActionCreator, ActionCreatorsMapObject, bindActionCreators } from 'redux';
-import { IAction } from '../interfaces/action.interface';
-import { IAppState } from '../reducers/reducer';
-import { TestActionCreators } from '../utilities/test-action.creators';
+import React, { ReactElement, useState } from 'react';
+
 import './Main.css';
+import { useApiTest } from '../services/useApiTest';
 
-interface IMainProps {
-  isLoading: boolean;
-  message: string;
-  dispatchApiTestStart?: ActionCreator<IAction>;
-}
+export function Main(): ReactElement {
+  const { loading, getData } = useApiTest()
+  const [message, setMessage] = useState(null)
 
-class Main extends Component<IMainProps> {
-
-  public onPingClick = () => {
-    this.props.dispatchApiTestStart();
+  const onPingClick = async () => {
+    setMessage(null);
+    const newMessage = await getData()
+    setMessage(newMessage)
   }
 
-  public render(): JSX.Element {
-    return (
-      <div className="app-container">
-        <div className="header">
-          <div className="header-row">
-            <div>
-              <h1>ts-node-template <span>by Kovaja</span></h1>
-            </div>
+  return (
+    <div className="app-container">
+      <div className="header">
+        <div className="header-row">
+          <div>
+            <h1>ts-node-template <span>by Kovaja</span></h1>
           </div>
         </div>
+      </div>
 
-        <div className="content">
-          <div style={{ textAlign: 'center' }}>
-            <button className="pure-button" type="button" onClick={this.onPingClick}>PING</button>
-            <p>{this.props.isLoading ? 'LOADING...' : null}</p>
-            <p>{this.props.message}</p>
-          </div>
+      <div className="content">
+        <div style={{textAlign: 'center'}}>
+          <button className="pure-button" type="button" onClick={onPingClick}>PING</button>
+          <p>{loading ? 'LOADING...' : null}</p>
+          <p>{message}</p>
         </div>
+      </div>
 
-        <div className="footer">
-          <span>ts-node-template by Kovaja</span>
-          <span>
+      <div className="footer">
+        <span>ts-node-template by Kovaja</span>
+        <span>
             2023
             <span className="version">(1.0.0)</span>
           </span>
-        </div>
       </div>
-    );
-  }
-}
-
-const mapStateToProps: MapStateToProps<IMainProps, any, IAppState> = (state: IAppState): IMainProps => {
-  return {
-    isLoading: state.isLoading,
-    message: state.testMessage
-  };
-};
-
-const mapDispatchToProps = (dispatch: any): ActionCreatorsMapObject<IAction> => {
-  return bindActionCreators<IAction, ActionCreatorsMapObject<IAction>>(
-    {
-      dispatchApiTestStart: TestActionCreators.testApiStart
-    },
-    dispatch
+    </div>
   );
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+}
