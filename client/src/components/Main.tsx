@@ -40,8 +40,8 @@ class Main extends Component<IMainProps> {
         <div className="footer">
           <span>ts-node-template by Kovaja</span>
           <span>
-            2019
-            <span className="version">(0.0.1)</span>
+            2023
+            <span className="version">(1.0.0)</span>
           </span>
         </div>
       </div>
