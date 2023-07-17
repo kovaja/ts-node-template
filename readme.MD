@@ -19,10 +19,7 @@ npm run server:dev
 npm run client:dev
 ```
 
-## Demo
-- this template project is deployed here: https://ts-node-template.herokuapp.com/ you can find, what you should see, when you start up the app
-
 ### TODOS:
-- do not build in heroku, utilize github ?
 - write unit tests
 - write e2e smoke test
+- remove redux
