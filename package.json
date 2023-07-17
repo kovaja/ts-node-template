@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Empty project with template for node.js application with REST api and react frontend",
   "scripts": {
-    "validate": "node ./tools/validation.js",
     "install": "npm run client:install && npm run server:install",
     "client:install": "cd client && npm install",
     "server:install": "cd server && npm install",
@@ -13,12 +12,18 @@
     "server:build": "cd server && npm run build",
     "start": "npm run build && npm run server",
     "server:dev": "cd server && npm run dev",
-    "client:dev": "cd client && npm run dev"
+    "client:dev": "cd client && npm run dev",
+    "lint": "npx eslint ."
   },
   "keywords": [
     "node",
     "typescript"
   ],
   "author": "kovaja",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.1.0",
+    "@typescript-eslint/parser": "6.1.0",
+    "eslint": "8.45.0"
+  }
 }

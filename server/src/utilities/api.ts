@@ -17,8 +17,8 @@ export function handleApiError(res: Response): (error: Error | AppError) => void
   };
 }
 
-export function handleApiResponse(res: Response): (data: any) => void {
-  return (data: any): void => {
+export function handleApiResponse(res: Response): (data: unknown) => void {
+  return (data: unknown): void => {
     res.status(200).send(data);
   };
 }

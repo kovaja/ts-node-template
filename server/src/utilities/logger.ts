@@ -5,15 +5,15 @@ enum LogLevel {
   error = 'error'
 }
 
-function out(level: LogLevel, ...args: any): void {
+function out(level: LogLevel, ...args: unknown[]): void {
   /* tslint:disable-next-line:no-console */
   console[level](`[${Constants.APP_NAME}] - ${new Date().toISOString()}: `, ...args);
 }
 
-export function log(...args: any[]): void {
+export function log(...args: unknown[]): void {
   out(LogLevel.log, ...args);
 }
 
-export function logError(...args: any[]): void {
+export function logError(...args: unknown[]): void {
   out(LogLevel.error, ...args);
 }
