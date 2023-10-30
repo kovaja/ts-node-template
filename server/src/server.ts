@@ -6,8 +6,6 @@ import { getHost, getPort, getProtocol } from './utilities/network';
 
 dotenv.config();
 
-const PORT = process.env.PORT;
-
 function onAppListening(): void {
   const network = {
     protocol: getProtocol(),
@@ -20,5 +18,5 @@ function onAppListening(): void {
 }
 
 createApp()
-  .then((app: Application) => app.listen(PORT, onAppListening))
+  .then((app: Application) => app.listen(getPort(), onAppListening))
   .catch((e) => logError(e));
