@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon",
-    "prod": "node ./dist/server.js"
+    "prod": "node ./dist/server.js",
+    "lint": "echo \"TBD\""
   },
   "author": "kovaja",
   "license": "ISC",
