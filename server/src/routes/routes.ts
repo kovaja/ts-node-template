@@ -30,5 +30,5 @@ export function initStaticRoutes(app: express.Application): void {
   };
 
   app.use(express.static(staticPath, staticOptions));
-  app.get('/*', serveIndex);
+  app.get('/{*splat}', serveIndex);
 }
