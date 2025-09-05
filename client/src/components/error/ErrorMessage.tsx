@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import './ErrorMessage.css';
 
 export interface IErrorProps {
   message: string;
 }
 
-export function ErrorMessage(props: IErrorProps): JSX.Element {
+export function ErrorMessage(props: IErrorProps): ReactElement {
   return (
     <div className="error-message">
       <h5>Oops, something is wrong...</h5>
