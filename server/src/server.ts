@@ -2,14 +2,16 @@ import * as dotenv from 'dotenv';
 import { Application } from 'express';
 import { createApp } from './app';
 import { log, logError } from './utilities/logger';
-import { getHost, getPort, getProtocol } from './utilities/network';
+import { getPort } from './utilities/network';
+import { isProduction } from './utilities/commons';
 
-dotenv.config();
+if(!isProduction()) {
+  // Use `.env` file for local development only
+  dotenv.config();
+}
 
 function onAppListening(): void {
   const network = {
-    protocol: getProtocol(),
-    host: getHost(),
     port: getPort()
   };
 

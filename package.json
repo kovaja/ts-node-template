@@ -6,6 +6,7 @@
     "install": "npm run client:install && npm run server:install",
     "client:install": "cd client && npm install",
     "server:install": "cd server && npm install",
+    "server:install:prod": "cd server && npm install --omit=dev",
     "server": "cd server && npm run prod",
     "build": "npm run client:build && npm run server:build",
     "client:build": "cd client && npm run build",
