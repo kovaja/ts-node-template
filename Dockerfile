@@ -11,7 +11,7 @@ COPY client/package*.json ./client/
 COPY server/package*.json ./server/
 
 # Install root deps (if using workspaces like npm/yarn/pnpm)
-RUN npm install
+RUN npm ci
 
 # Copy rest of the source code
 COPY . .
@@ -25,10 +25,6 @@ RUN npm run build
 FROM node:22-alpine AS runner
 
 WORKDIR /app
-
-# Set environment variables
-ENV NODE_ENV=production
-ENV PORT=8000
 
 # Copy only production dependencies
 COPY package*.json ./
