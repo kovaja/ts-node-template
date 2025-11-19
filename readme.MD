@@ -2,6 +2,7 @@
 - node.js server with rest API, using express
 - react frontend
 - both in typescript
+
 ## Quick start
 - run command
 ```
@@ -36,8 +37,3 @@ npm run client:dev
 | Exec into service | `docker compose exec <svc> sh`     | Opens a shell inside a running container   |
 | Pull images       | `docker compose pull`              | Gets latest images from registry           |
 | Stop without rm   | `docker compose stop`              | Stops containers but keeps them available  |
-
-
-### TODOS:
-- write unit tests
-- write e2e smoke test
