@@ -5,8 +5,6 @@ import { initLogging } from './utilities/middleware/logging';
 
 export function createApp(): Promise<express.Application> {
   const app = express();
-
-  // Since we are using traefik
   app.set('trust proxy', true);
 
   return Promise.resolve()
