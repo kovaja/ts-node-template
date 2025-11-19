@@ -29,16 +29,6 @@ services:
       - "80:80"
       - "443:443"
 
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.traefik.rule=Host(`traefik.${APP_DOMAIN}`)"
-      - "traefik.http.routers.traefik.entrypoints=websecure"
-      - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
-
-      # Enable the dashboard
-      - "traefik.http.routers.traefik.service=api@internal"
-
-
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./letsencrypt:/letsencrypt
@@ -49,6 +39,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: ts-node-template
     container_name: ts-node-template
     env_file: .env
     environment:
