@@ -1,6 +1,6 @@
 {
   "name": "kovaja-ts-node-template",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Empty project with template for node.js application with REST api and react frontend",
   "scripts": {
     "install": "npm run client:install && npm run server:install",
