@@ -34,8 +34,8 @@ export function Main(): ReactElement {
       <div className="footer">
         <span>ts-node-template by Kovaja</span>
         <span>
-            2023
-            <span className="version">(1.0.0)</span>
+            2025
+            <span className="version">(0.0.2)</span>
           </span>
       </div>
     </div>
