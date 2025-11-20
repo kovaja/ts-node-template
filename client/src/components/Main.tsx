@@ -35,7 +35,7 @@ export function Main(): ReactElement {
         <span>ts-node-template by Kovaja</span>
         <span>
             2025
-            <span className="version">(0.0.3)</span>
+            <span className="version">(0.0.4)</span>
           </span>
       </div>
     </div>
