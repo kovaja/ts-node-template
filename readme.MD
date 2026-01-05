@@ -19,3 +19,12 @@ npm run server:dev
 ```
 npm run client:dev
 ```
+
+## Publishing new version
+- Version will be changed
+- New tag will get created
+- Tag will get pushed
+- New tag will trigger new build of docker image
+```
+npm run publish patch|minor|major
+```
