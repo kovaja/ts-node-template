@@ -14,7 +14,8 @@
     "start": "npm run build && npm run server",
     "server:dev": "cd server && npm run dev",
     "client:dev": "cd client && npm run dev",
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "publish": "bash scripts/publish.sh"
   },
   "keywords": [
     "node",
